@@ -40,7 +40,7 @@ const allFluidPosts = (await getFluidPosts()).slice(0, 6);
 			<div class='mt-6 mb-12'>
 				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
 					<h2 class='text-lg font-bold mb-3'>生活文章</h2>
-					<a href='/archive/fluid' class='inline-block py-2 underline dark:prose-invert'>所有生活文章 &raquo;</a>
+					<a href='/archive/tech' class='inline-block py-2 underline dark:prose-invert'>所有生活文章 &raquo;</a>
 				</div>
 				<div>
 					{allFluidPosts.map((post) => <FluidPostItem post={post} />)}

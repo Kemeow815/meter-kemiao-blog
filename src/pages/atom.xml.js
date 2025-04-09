@@ -5,7 +5,7 @@ import { getFluidPostPath } from '../utils/blog';
 
 export async function GET(context) {
     const posts = await getAllPosts();
-    const fluidPosts = await getFluidPosts();
+    const FluidPosts = await getFluidPosts();
     const site = context.site;
 
     return new Response(
@@ -29,10 +29,10 @@ export async function GET(context) {
                     <content type="html"><![CDATA[${post.data.description || ''}]]></content>
                 </entry>
             `).join('')}
-            ${fluidPosts.map((post) => {
-                const params = getFluidPostPath(post);
-                const link = `${site}${params.year}/${params.month}/${params.day}/${params.title}/`;
-                return `
+            ${FluidPosts.map((post) => {
+            const params = getFluidPostPath(post);
+            const link = `${site}${params.year}/${params.month}/${params.day}/${params.title}/`;
+            return `
                 <entry>
                     <id>${link}</id>
                     <title>${post.data.title}</title>
@@ -41,7 +41,7 @@ export async function GET(context) {
                     <content type="html"><![CDATA[${post.data.description || ''}]]></content>
                 </entry>
                 `;
-            }).join('')}
+        }).join('')}
         </feed>`,
         {
             headers: {

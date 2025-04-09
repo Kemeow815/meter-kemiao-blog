@@ -5,7 +5,7 @@ import { getAllPosts, getFluidPosts, getFluidPostPath } from '@src/utils/blog';
 
 export async function GET(context) {
 	const posts = await getAllPosts();
-	const fluidPosts = await getFluidPosts();
+	const FluidPosts = await getFluidPosts();
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
@@ -19,7 +19,7 @@ export async function GET(context) {
 				...post.data,
 				link: `/blog/${post.slug}/`,
 			})),
-			...fluidPosts.map((post) => {
+			...FluidPosts.map((post) => {
 				const params = getFluidPostPath(post);
 				return {
 					...post.data,
