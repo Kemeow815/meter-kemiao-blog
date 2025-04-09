@@ -12,7 +12,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.studyinglover.com',
+  site: 'https://blogs.kemiao.online',
   integrations: [mdx(), sitemap(), tailwind({
     applyBaseStyles: false,
   }), partytown(), react()],

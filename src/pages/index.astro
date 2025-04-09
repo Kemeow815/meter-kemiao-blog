@@ -6,62 +6,47 @@ import Prose from '../components/Prose.astro';
 import PostItem from '../components/PostItem.astro';
 import FluidPostItem from '../components/FluidPostItem.astro';
 import { getAllPosts, getFluidPosts } from '@src/utils/blog';
-import Ava from '@src/assets/img/favicon.png'
-
+import Ava from '@src/assets/img/favicon.png';
 
 const allPosts = (await getAllPosts()).slice(0, 10);
 const allFluidPosts = (await getFluidPosts()).slice(0, 6);
-
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION}>
 	<div class='container'>
 		<div class='w-full md:flex md:items-center gap-16 mb-10'>
-      <div class="text-pretty leading-9">
-        <h1 class="text-4xl font-bold mb-4">Hi There 👋, StudyingLover Here! </h1>
-        <Prose>
-          <div class="text-lg">
-            <p>我是StudyingLover, 计算机科学与技术专业本科生。</p>
-          </div>
-        </Prose>
-      </div>
-      <Image src={Ava} alt="Avator" width={300} height={300} loading="eager" class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
+			<div class='text-pretty leading-9'>
+				<h1 class='text-4xl font-bold mb-4'>Hi There 👋, 克喵爱吃卤面 Here!</h1>
+				<Prose>
+					<div class='text-lg'>
+						<p>我是克喵爱吃卤面，自动化技术与应用在读本科生。</p>
+					</div>
+				</Prose>
+			</div>
+			<Image src={Ava} alt='Avator' width={300} height={300} loading='eager' class='rounded-3xl rotate-3 mx-4 md:mx-0' />
 		</div>
 		<main>
-      <div class='mt-6 mb-12'>
-        <div class="flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700">
-          <h2 class="text-lg font-bold mb-3">Recent Posts</h2>
-          <a href="/posts/" class="inline-block py-2 underline dark:prose-invert">All posts &raquo;</a>
-        </div>
-        <div>
-          {
-            allPosts.map((post) => (
-              <PostItem post={post} />
-            ))
-          }      
-        </div>
-        <div class="text-right">
-        </div>
-      </div>
+			<div class='mt-6 mb-12'>
+				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
+					<h2 class='text-lg font-bold mb-3'>技术文章</h2>
+					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>所有技术文章 &raquo;</a>
+				</div>
+				<div>
+					{allPosts.map((post) => <PostItem post={post} />)}
+				</div>
+				<div class='text-right'></div>
+			</div>
 
-
-      <div class='mt-6 mb-12'>
-        <div class="flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700">
-          <h2 class="text-lg font-bold mb-3">Fluid Posts Archives</h2>
-          <a href="/archive/fluid" class="inline-block py-2 underline dark:prose-invert">All Fluid Posts &raquo;</a>
-        </div>
-        <div>
-          {
-            allFluidPosts.map((post) => (
-              <FluidPostItem post={post} />
-            ))
-          }      
-        </div>
-        <div class="text-right">
-        </div>
-      </div>
-      
-
+			<div class='mt-6 mb-12'>
+				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
+					<h2 class='text-lg font-bold mb-3'>生活文章</h2>
+					<a href='/archive/fluid' class='inline-block py-2 underline dark:prose-invert'>所有生活文章 &raquo;</a>
+				</div>
+				<div>
+					{allFluidPosts.map((post) => <FluidPostItem post={post} />)}
+				</div>
+				<div class='text-right'></div>
+			</div>
 		</main>
 	</div>
 </BaseLayout>
