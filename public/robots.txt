@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.studyinglover.com/sitemap-index.xml
+Sitemap: https://blogs.kemiao.online/sitemap-index.xml
