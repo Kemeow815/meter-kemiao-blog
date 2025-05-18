@@ -33,6 +33,12 @@ export const friends: Friend[] = [
 		link: 'https://blog.zhilu.cyou'
 	},
 	{
+		name: 'wallleap',
+		avatar: 'https://gravatar.wallleap.cn/avatar/be1ccdcf025a92b98a92e331e1b3662a?size=256',
+		description: 'Luwang\'s blog',
+		link: 'https://myblog.wallleap.cn'
+	},
+	{
 		name: 'MisakaNo の 小破站',
 		avatar: 'https://imgs.misaka.cloudns.biz/20230115115530.png',
 		description: '这只是一个小破站而已！',

@@ -7,7 +7,7 @@ import { friends } from '../../pages/links/links'; // 导入友链数据
 <BaseLayout>
   <div class='container'>
     <div class='w-full mb-10'>
-      <h2 class="text-4xl font-bold mb-4">Friends</h2>
+      <h2 class="text-4xl font-bold mb-4">朋友们</h2>
       <FriendList friends={friends} />
     </div>
     <div class='w-full mb-10'>
@@ -24,5 +24,19 @@ import { friends } from '../../pages/links/links'; // 导入友链数据
       </a>
       </div>
     </div>
+    <div class='w-full mb-10'>
+      <h2 class="text-4xl font-bold mb-4">我的友链信息</h2>
+    </div>
+    <pre>
+      <code>
+        {`name: "喵落阁",`}
+        {`avatar: "https://cn.cravatar.com/avatar/7614B285E795F21E780247019C4E15C4?size=256",`}
+        {'description: "愿你看清一切真相后，依旧热爱你的家人和朋友。",'}
+        {'link: "https://blogs.kemiao.online"'}
+      </code>
+    </pre>
+    <ul>
+      <li>添加友链的唯一要求时: 不违法、不辱骂他人。</li>
+    </ul>
   </div>
 </BaseLayout>
